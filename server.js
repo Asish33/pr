@@ -83,14 +83,13 @@ app.get("/logout", async(req, res, next) => {
 });
 
 app.post("/webhook", async (req, res) => {
-  const type = req.get("X-Github-Event");
-  if (type === "pull_request") {
+ 
     const body = req.body;
     const input = JSON.stringify(body);
     const response = await giveContent(input);
     console.log(response);
     res.send(response);
-  }
+  
 });
 
 app.listen(3000, () => {
