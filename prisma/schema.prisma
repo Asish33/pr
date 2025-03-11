@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" 
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  githubId   String   @id @unique
+  username   String
+  accessToken String
+  webhooks   WebhookData[]
+}
+
+model WebhookData {
+  id        String   @id @default(uuid())
+  content   String
+  githubId  String
+  repoName  String
+  owner     String   
+  user      User     @relation(fields: [githubId], references: [githubId], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}

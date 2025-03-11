@@ -11,14 +11,18 @@
   "license": "ISC",
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
+    "@prisma/client": "^6.4.1",
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
     "env": "^0.0.2",
     "express": "^4.21.2",
     "express-session": "^1.18.1",
+    "http": "^0.0.1-security",
     "passport": "^0.7.0",
     "passport-github2": "^0.1.12",
     "passport-google-oauth20": "^2.0.0",
-    "react-router-dom": "^7.1.5"
+    "prisma": "^6.4.1",
+    "react-router-dom": "^7.1.5",
+    "ws": "^8.18.1"
   }
 }
